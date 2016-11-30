@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"  
+    xmlns:f="http://java.sun.com/jsf/core"  
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Hey!!</title>
+        <h:outputStylesheet name="css.css" library="css" />
+    </h:head>
+    <h:body>
+       <p:panel header="Agenda!" style="width:50%">
+			<p:panelGrid columns="2" style="border:none;">
+				<p:outputLabel for="idContato" value="ID:"/>
+				<p:inputText id="idContato" value="#{contatoMBean.contato.idContato}">
+					<p:ajax event="blur" listener="#{contatoMBean.buscarContato}"/>
+				</p:inputText>
+				<p:outputLabel for="nmContato" value="Nome:"/>
+				<p:inputText id="nmContato" value="#{contatoMBean.contato.nmContato}"/>
+				<p:outputLabel for="cdTelefone" value="Telefone:"/>
+				<p:inputText id="cdTelefone" value="#{contatoMBean.contato.cdTelefone}"/>
+				<p:outputLabel for="nmEmail" value="Email:"/>
+				<p:inputText id="nmEmail" value="#{contatoMBean.contato.nmEmail}"/>
+				<p:column/>
+				<p:commandButton action="#{contatoMBean.gravar}" value="Atualizar" update="grdContato></p:commandButton>
+			</p:panelGrid>
+		</p:panel>
+    </h:body>
+</html>

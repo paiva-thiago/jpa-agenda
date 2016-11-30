@@ -23,7 +23,7 @@ private EntityManager em;
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List<Contato> listarAlunos(){
+	public List<Contato> listarContatos(){
 		List<Contato> retorno = null;
 		Query q = em.createQuery("select c from Contato c");
 		retorno = q.getResultList();
